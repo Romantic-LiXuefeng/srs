@@ -382,7 +382,7 @@ int run()
 int run_master()
 {
     int ret = ERROR_SUCCESS;
-    
+    srs_trace("srs server startup...");
     if ((ret = _srs_server->initialize_st()) != ERROR_SUCCESS) {
         return ret;
     }
@@ -414,7 +414,7 @@ int run_master()
     if ((ret = _srs_server->cycle()) != ERROR_SUCCESS) {
         return ret;
     }
-    
+    srs_trace("srs server stop...");
     return 0;
 }
 
